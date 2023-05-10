@@ -1,0 +1,38 @@
+<div class="row">
+  {{#each articles}}
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ tittle }}</h5>
+      <p class="card-text">Descripción: {{ text }}</p>
+      <p class="card-text">Fecha: {{ date }}</p>
+      <p class="card-text">Comentarios: {{ comments }}</p>
+      <p class="card-text">Categoria: {{ categories }}</p>
+      <p class="card-text">Tags: {{ tags }}</p>
+      <li class="list-group-item">
+        <div class="card-body">
+          <a href="/articles/edit/{{ _id }}" class="card-link">Editar Articulo</a>
+      </li>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="card-body">
+          <a href="/comments/add" class="card-link">Agregar Comentario</a>
+      </li>
+      <li class="list-group-item">
+        <div class="card-body">
+          <a href="/comments" class="card-link">Ver Comentarios</a>
+      </li>
+    </ul>
+    <div class="card-body">
+      <a href="/categories" class="card-link">Categories</a>
+      <a href="/tags" class="card-link">Tags</a>
+    </div>
+    <form action="/articles/delete/{{_id}}?_method=DELETE" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit" class="btn btn-danger btn-block btn-sm">
+        Delete
+      </button>
+    </form>
+  </div>
+  {{/each}}
+</div>

@@ -1,0 +1,26 @@
+<div class="row">
+  {{#each comments}}
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Comentario</h5>
+      <p class="card-text">{{ name }}</p>
+      <p class="card-text">{{ url }}</p>
+      <li class="list-group-item">
+        <div class="card-body">
+          <a href="/comments/edit/{{ _id }}" class="card-link">Editar Articulo</a>
+      </li>
+    </div>
+      <li class="list-group-item">
+        <div class="card-body">
+          <a href="/articles" class="card-link">Ver Articulos</a>
+      </li>
+    </ul>
+    <form action="/comments/delete/{{_id}}?_method=DELETE" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit" class="btn btn-danger btn-block btn-sm">
+        Delete
+      </button>
+    </form>
+  </div>
+  {{/each}}
+</div>
