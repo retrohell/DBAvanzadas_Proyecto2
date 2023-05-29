@@ -7,25 +7,41 @@ const {
     renderUser, 
     renderEditUserForm, 
     updateUser, 
-    deleteUser 
+    deleteUser,
+    renderSignInForm,
+    renderSignUpForm,
+    signin,
+    signup,
+    logout, 
 } = require('../controllers/users.controller');
 
-// Nuevo Users
-router.get('/users/add', renderUserForm);
+router.get('/users/signup', renderSignUpForm);
 
-router.post('/users/add', createNewUser);
+router.post('/users/signup', signup);
+
+router.get('/users/signin', renderSignInForm);
+
+router.post('/users/sigin', signin);
+
+router.get('/users/logout', logout);
+
+
+// Nuevo Users
+// router.get('/users/add', renderUserForm);
+
+// router.post('/users/add', createNewUser);
 
 // Mostrar todos los Users
-router.get('/users', renderUser);
+router.get('/users/users', renderUser);
 
 // Update (mostrar) Users
-router.get('/users/edit/:id', renderEditUserForm);
+// router.get('/users/edit/:id', renderEditUserForm);
 
 // Update (actualización) Users
-router.put('/users/edit/:id', updateUser);
+// router.put('/users/edit/:id', updateUser);
 
 // Borrar Users
-router.delete('/users/delete/:id', deleteUser);
+// router.delete('/users/delete/:id', deleteUser);
 
 
 module.exports = router

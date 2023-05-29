@@ -1,31 +1,42 @@
 <div class="row">
   {{#each articles}}
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 60rem;">
+    <img src="/images/{{tittle}}.png" class="card-img-top" width="20px" height="650px">
     <div class="card-body">
       <h5 class="card-title">{{ tittle }}</h5>
-      <p class="card-text">Descripción: {{ text }}</p>
+      <p class="card-text">Descripción: {{ description }}</p>
       <p class="card-text">Fecha: {{ date }}</p>
-      <p class="card-text">Comentarios: {{ comments }}</p>
       <p class="card-text">Categoria: {{ categories }}</p>
-      <p class="card-text">Tags: {{ tags }}</p>
+      <p class="card-text">Tags: {{ tags }}  </p>
       <li class="list-group-item">
         <div class="card-body">
-          <a href="/articles/edit/{{ _id }}" class="card-link">Editar Articulo</a>
-      </li>
+          <object width="770px" height="500px" data="/pdf/{{tittle}}.pdf"></object>
+          </li>
     </div>
+    
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         <div class="card-body">
-          <a href="/comments/add" class="card-link">Agregar Comentario</a>
+          <a href="/articles/edit/{{id}}" class="card-link">Editar Publicación</a>
       </li>
+      <!--
+      {{#each comments}}
+        <li class="list-group-item">
+        <div class="card-body">
+          <a class="card-link">{{comments}}</a>
+      </li>
+      -->
+      {{/each}}
       <li class="list-group-item">
         <div class="card-body">
           <a href="/comments" class="card-link">Ver Comentarios</a>
       </li>
     </ul>
     <div class="card-body">
-      <a href="/categories" class="card-link">Categories</a>
+      <!--
+      <a href="/categories" class="card-link">Compartir</a>
       <a href="/tags" class="card-link">Tags</a>
+      -->
     </div>
     <form action="/articles/delete/{{_id}}?_method=DELETE" method="POST">
       <input type="hidden" name="_method" value="DELETE">

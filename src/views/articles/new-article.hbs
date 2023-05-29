@@ -6,14 +6,24 @@
         <div class="card-body">
             <form action="/articles/new-article" method="POST">
                 <div class="form-group">
-                    <input type="text" name="tittle" class="form-control" placeholder="Titulo" autofocus>
+                    <input type="text" name="Titulo" class="form-control" placeholder="Titulo" autofocus>
                 </div>
                 <div class="form-group">
-                    <input type="date" name="date" class="form-control" placeholder="Date">
+                    <input type="date" name="Fecha" class="form-control" placeholder="Date">
                 </div>
                 <div class="form-group">
-                    <textarea name="text" rplaceholder="Text" class="form-control"></textarea>
+                    <textarea name="description" rplaceholder="Descripción" class="form-control"></textarea>
                 </div>
+                <div class="form-group">
+                    <input type="text" name="Categoria" class="form-control" placeholder="categorie">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Tags" class="form-control" placeholder="tags">
+                </div>
+                <div class="row">
+				 <div class="cell label">Pdf:</div>
+	 			<div class="cell"><input type="file" name="file"/></div>
+			 </div>
                 <div class="form-group">
                     <button class="btn btn-primary btn-block">
                         Guardar

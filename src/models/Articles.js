@@ -9,22 +9,18 @@ const ArticleSchema = new Schema({
         type: Date,
         required: true
     },
-    text : {
+    description : {
         type: String,
         required: true
     },
     categorie: {
-        type: Array,
-        required: true
-    },
-    comments: {
-        type: Array,
+        type: String,
         required: true
     },
     tags: {
         type: Array,
         required: true
-    }
+    },
 }, {
     timestamps: true
 })
