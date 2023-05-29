@@ -13,13 +13,13 @@
                     <input type="date" name="date" class="form-control" value="{{ article.date }}"></input>
                 </div>
                 <div class="form-group">
-                    <textarea name="description" rplaceholder="Descripción" class="form-control"></textarea>
+                    <textarea name="description" rplaceholder="Descripción" class="form-control" value="{{ article.description }}">{{ article.description }}</textarea>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="Categoria" class="form-control" placeholder="categorie">
+                    <input type="text" name="categories" class="form-control" placeholder="Categoria" value="{{ article.categories }}">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="Tags" class="form-control" placeholder="tags">
+                    <input type="text" name="tags" class="form-control" placeholder="Tags" value="{{ article.tags }}">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary btn-block" type="submit">

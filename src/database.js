@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const { PROYECTO_HOST, PROYECTO_DB } = process.env;
-const MONGODB_URI = 'mongodb+srv://a329762:QRVRu2QCxlOtDvMi@proyectodb.j7na8vg.mongodb.net/'; // 
+const MONGODB_URI = 'mongodb://127.0.0.1:27017/libreria'; // 
 // 'mongodb+srv://a329762:QRVRu2QCxlOtDvMi@proyectodb.j7na8vg.mongodb.net/'
 // 'mongodb://127.0.0.1:27017/libreria'
 mongoose.connect(MONGODB_URI, {
